@@ -1,0 +1,40 @@
+.product {
+    height: 285px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px grey;
+    border-radius: 5px;
+}
+
+.product > .name {
+    margin-bottom: 8px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.product > .description {
+    margin-bottom: 8px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.product > .price {
+    margin-bottom: 8px;
+}
+
+.product > .add {
+    height: 30px;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+    background-color: #4ad1ce;
+    border-radius: 5px
+}
+
+.product > .add:focus {
+    outline: none;
+}

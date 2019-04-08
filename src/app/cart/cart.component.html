@@ -1,0 +1,20 @@
+<div *ngIf="cartItemService.cartItems.length === 0" class='empty-cart'>
+  <span>You have no items in your cart.</span>
+</div>
+<div *ngIf="cartItemService.cartItems.length !== 0" class='cart'>
+  <div *ngFor='let cartItem of cartItemService.cartItems; index as i' class='cart-item'>
+    <div class='product'>
+      <span class='name'>{{cartItem.product.name}}</span>
+      <span class='description'>{{cartItem.product.description}}</span>
+      <div>
+        Quantity: <span>{{cartItem.quantity}}</span>
+      </div>
+    </div>
+    <span class='total'>{{cartItem.product.price * cartItem.quantity | currency}}</span>
+    <button class='remove' type='button' (click)='removeFromCart(i)'>X</button>
+  </div>
+  <div class='total'>
+    Total: <span>{{cartItemService.getTotalPrice() | currency}}</span>
+  </div>
+  <button class='checkout' type='button'>Checkout</button>
+</div>
